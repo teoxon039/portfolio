@@ -35,11 +35,18 @@ img {
   top: -40px;
 	left: 8%;
   width: 80%;
-  animation-name: entrance-bounce;
+  animation: fadeIn 1s ease-in-out forwards;
   animation-duration: 1s;
   animation-fill-mode: both;
-
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .image-container img {
@@ -47,10 +54,23 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 110%;
+  transform: translateX(0px);
+  animation: float 6s ease-out infinite;
   object-fit: cover;
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-60px);
+  } 
+  100% {
+    transform: translateY(0px);
+  }
+}
 
 .logo {
 	position: relative;
@@ -302,7 +322,6 @@ img {
 .home-sci a:hover {
 	color: white;
 } 
-
 
 
 
